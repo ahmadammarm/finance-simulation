@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Coins, Info, CheckCircle2, AlertCircle } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { FormatRupiah } from "@/lib/rupiah"
 
 export default function ZakatMaal({ title }: { title: string }) {
     const [totalWealth, setTotalWealth] = useState<string>("")
@@ -28,14 +29,7 @@ export default function ZakatMaal({ title }: { title: string }) {
         }
     }
 
-    const formatRupiah = (value: number): string => {
-        return new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
-        }).format(value)
-    }
+    
 
     const isAboveNisab = totalWealth ? Number.parseFloat(totalWealth) >= NISAB : false
 
@@ -99,7 +93,7 @@ export default function ZakatMaal({ title }: { title: string }) {
                                 </div>
                                 {hargaEmas && (
                                     <p className="text-sm font-medium text-primary mt-2">
-                                        Nisab saat ini: {formatRupiah(NISAB)}
+                                        Nisab saat ini: {FormatRupiah(NISAB)}
                                     </p>
                                 )}
                             </div>
@@ -127,7 +121,7 @@ export default function ZakatMaal({ title }: { title: string }) {
                                 </div>
                                 {totalWealth && (
                                     <p className="text-sm font-medium text-primary mt-2">
-                                        {formatRupiah(Number.parseFloat(totalWealth) || 0)}
+                                        {FormatRupiah(Number.parseFloat(totalWealth) || 0)}
                                     </p>
                                 )}
                             </div>
@@ -178,11 +172,11 @@ export default function ZakatMaal({ title }: { title: string }) {
                                         </div>
                                         <p className="text-sm font-medium text-muted-foreground mb-2">Jumlah Zakat yang Harus Dibayarkan</p>
                                         <p className="text-4xl md:text-6xl font-bold text-primary mb-4">
-                                            {formatRupiah(zakatAmount)}
+                                            {FormatRupiah(zakatAmount)}
                                         </p>
                                         <div className="inline-block bg-primary/20 px-6 py-3 rounded-full border-2 border-primary/30">
                                             <p className="text-sm font-bold text-primary">
-                                                2,5% dari {formatRupiah(Number.parseFloat(totalWealth))}
+                                                2,5% dari {FormatRupiah(Number.parseFloat(totalWealth))}
                                             </p>
                                         </div>
                                     </div>
@@ -196,18 +190,18 @@ export default function ZakatMaal({ title }: { title: string }) {
                                             <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border border-primary/10">
                                                 <span className="text-sm font-medium text-muted-foreground">Harga Emas per Gram</span>
                                                 <span className="font-bold text-foreground">
-                                                    {formatRupiah(Number.parseFloat(hargaEmas))}
+                                                    {FormatRupiah(Number.parseFloat(hargaEmas))}
                                                 </span>
                                             </div>
                                             <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border border-primary/10">
                                                 <span className="text-sm font-medium text-muted-foreground">Total Harta</span>
                                                 <span className="font-bold text-foreground">
-                                                    {formatRupiah(Number.parseFloat(totalWealth))}
+                                                    {FormatRupiah(Number.parseFloat(totalWealth))}
                                                 </span>
                                             </div>
                                             <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border border-primary/10">
                                                 <span className="text-sm font-medium text-muted-foreground">Nisab (85 gram emas)</span>
-                                                <span className="font-bold text-foreground">{formatRupiah(NISAB)}</span>
+                                                <span className="font-bold text-foreground">{FormatRupiah(NISAB)}</span>
                                             </div>
                                             <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg border border-primary/10">
                                                 <span className="text-sm font-medium text-muted-foreground">Persentase Zakat</span>
@@ -215,7 +209,7 @@ export default function ZakatMaal({ title }: { title: string }) {
                                             </div>
                                             <div className="flex justify-between items-center p-4 bg-primary rounded-lg shadow-lg">
                                                 <span className="text-sm font-bold text-white">Zakat yang Wajib Dibayar</span>
-                                                <span className="font-bold text-white text-lg">{formatRupiah(zakatAmount)}</span>
+                                                <span className="font-bold text-white text-lg">{FormatRupiah(zakatAmount)}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -238,7 +232,7 @@ export default function ZakatMaal({ title }: { title: string }) {
                                     </p>
                                     <div className="inline-block bg-accent/20 px-6 py-3 rounded-full border-2 border-accent/30">
                                         <p className="text-sm font-bold text-accent">
-                                            Selisih: {formatRupiah(NISAB - Number.parseFloat(totalWealth))}
+                                            Selisih: {FormatRupiah(NISAB - Number.parseFloat(totalWealth))}
                                         </p>
                                     </div>
                                 </div>
