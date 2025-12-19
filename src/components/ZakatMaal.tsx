@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Coins, Info, CheckCircle2, AlertCircle } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-export default function ZakatMaal() {
+export default function ZakatMaal({ title }: { title: string }) {
     const [totalWealth, setTotalWealth] = useState<string>("")
     const [zakatAmount, setZakatAmount] = useState<number | null>(null)
     const [showResult, setShowResult] = useState(false)
@@ -38,6 +38,10 @@ export default function ZakatMaal() {
     }
 
     const isAboveNisab = totalWealth ? Number.parseFloat(totalWealth) >= NISAB : false
+
+    useEffect(() => {
+        document.title = `Finance Simulation App - ${title}`
+    }, [title])
 
     return (
         <div className="min-h-screen bg-linear-to-br from-primary/5 via-primary/10 to-primary/20">

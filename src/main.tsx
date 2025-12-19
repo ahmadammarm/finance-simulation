@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')!).render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} />
-                <Route path="/zakat-maal" element={<ZakatMaal />} />
+                <Route path="/zakat-maal" element={<ZakatMaal title="Kalkulator Zakat Maal" />} />
             </Routes>
         </BrowserRouter>
     </StrictMode>
