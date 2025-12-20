@@ -41,7 +41,7 @@ export default function ZakatMaal({ title }: { title: string }) {
         <div className="min-h-screen bg-linear-to-br from-primary/5 via-primary/10 to-primary/20">
             <div className="container mx-auto px-4 py-12 max-w-4xl">
                 <div className="text-center mb-12 space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent text-balance">
+                    <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent text-balance">
                         Kalkulator Zakat Maal
                     </h1>
                     <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -71,7 +71,7 @@ export default function ZakatMaal({ title }: { title: string }) {
                     <CardContent className="p-8">
                         <div className="space-y-6">
                             <div>
-                                <label className="block text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                                <label className="block text-sm font-semibold text-foreground mb-3 items-center gap-2">
                                     <Coins className="w-4 h-4 text-primary" />
                                     Harga Emas per Gram (Rupiah)
                                 </label>
@@ -99,7 +99,7 @@ export default function ZakatMaal({ title }: { title: string }) {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                                <label className="block text-sm font-semibold text-foreground mb-3 items-center gap-2">
                                     <Coins className="w-4 h-4 text-primary" />
                                     Total Harta Anda (Rupiah)
                                 </label>
