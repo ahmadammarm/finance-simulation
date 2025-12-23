@@ -252,9 +252,7 @@ export default function ZakatMaal({ title }: { title: string }) {
                         lembaga zakat terpercaya.
                     </p>
                 </div>
-                <div className="flex items-center justify-center">
-                    <BackToHome bgColor="bg-primary" />
-                </div>
+                <BackToHome bgColor="bg-primary" />
             </div>
         </div>
     )

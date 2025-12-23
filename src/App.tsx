@@ -21,7 +21,7 @@ export default function App() {
                         icon={Wallet}
                         buttonColor="text-emerald-700"
                         link="/zakat-maal"
-                        gradient="bg-linear-to-br from-emerald-400 to-cyan-500"
+                        gradient="bg-linear-to-br from-emerald-400 to-emerald-500"
                     />
 
                     <FinanceTypeCard
@@ -33,6 +33,14 @@ export default function App() {
                         gradient="bg-linear-to-br from-cyan-400 to-blue-500"
                     />
 
+                    <FinanceTypeCard
+                        title="Simulasi KPR Syariah"
+                        description="Simulasikan cicilan KPR Syariah berbasis akad Murabahah dengan margin tetap."
+                        icon={Banknote}
+                        buttonColor="text-purple-700"
+                        link="/kpr-syariah"
+                        gradient="bg-linear-to-br from-purple-400 to-pink-500"
+                    />
                 </div>
             </div>
         </div>

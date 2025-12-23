@@ -304,9 +304,7 @@ export default function ZakatPenghasilan({ title }: { title: string }) {
                         lembaga zakat terpercaya.
                     </p>
                 </div>
-                <div className="flex items-center justify-center">
-                    <BackToHome bgColor="bg-blue-400 hover:bg-blue-500" />
-                </div>
+                <BackToHome bgColor="bg-blue-400 hover:bg-blue-500" />
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ import App from './App.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import ZakatMaal from './components/ZakatMaal.tsx'
 import ZakatPenghasilan from './components/ZakatPenghasilan.tsx'
+import KPRSyariah from './components/KPRSyariah.tsx'
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="/" element={<App />} />
                 <Route path="/zakat-maal" element={<ZakatMaal title="Kalkulator Zakat Maal" />} />
                 <Route path="/zakat-penghasilan" element={<ZakatPenghasilan title="Kalkulator Zakat Penghasilan" />} />
+                <Route path="/kpr-syariah" element={<KPRSyariah title="Simulasi KPR Syariah" />} />
             </Routes>
         </BrowserRouter>
     </StrictMode>
