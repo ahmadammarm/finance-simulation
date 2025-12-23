@@ -4,7 +4,7 @@ import { Wallet, Banknote } from "lucide-react"
 export default function App() {
     return (
         <div className="min-h-screen bg-linear-to-br from-primary/10 via-card to-accent/10">
-            <div className="text-center pt-12 mb-8">
+            <div className="text-center pt-12 mb-8 px-4">
                 <h1 className="text-4xl md:text-5xl font-bold">
                     Finance Simulation Platform
                 </h1>
