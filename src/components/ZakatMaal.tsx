@@ -3,6 +3,8 @@ import { Coins, Info, CheckCircle2, AlertCircle } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FormatRupiah } from "@/lib/rupiah"
+import BackToHome from "./layout/BackToHome"
+import { BreadcrumbHeader } from "./layout/BreadcrumbHeader"
 
 export default function ZakatMaal({ title }: { title: string }) {
     const [totalWealth, setTotalWealth] = useState<string>("")
@@ -29,7 +31,7 @@ export default function ZakatMaal({ title }: { title: string }) {
         }
     }
 
-    
+
 
     const isAboveNisab = totalWealth ? Number.parseFloat(totalWealth) >= NISAB : false
 
@@ -40,6 +42,9 @@ export default function ZakatMaal({ title }: { title: string }) {
     return (
         <div className="min-h-screen bg-linear-to-br from-primary/5 via-primary/10 to-primary/20">
             <div className="container mx-auto px-4 py-12 max-w-4xl">
+                <div className="mb-6">
+                    <BreadcrumbHeader pathName="Zakat Maal" textColor="text-primary" />
+                </div>
                 <div className="text-center mb-12 space-y-4">
                     <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent text-balance">
                         Kalkulator Zakat Maal
@@ -129,8 +134,8 @@ export default function ZakatMaal({ title }: { title: string }) {
                             {totalWealth && (
                                 <div
                                     className={`p-4 rounded-xl border-2 shadow-md ${isAboveNisab
-                                            ? "bg-primary/10 border-primary/40"
-                                            : "bg-muted border-accent/40"
+                                        ? "bg-primary/10 border-primary/40"
+                                        : "bg-muted border-accent/40"
                                         }`}
                                 >
                                     <div className="flex items-center gap-2">
@@ -246,6 +251,9 @@ export default function ZakatMaal({ title }: { title: string }) {
                         Perhitungan ini adalah estimasi. Untuk perhitungan yang lebih akurat, konsultasikan dengan ustadz atau
                         lembaga zakat terpercaya.
                     </p>
+                </div>
+                <div className="flex items-center justify-center">
+                    <BackToHome bgColor="bg-primary" />
                 </div>
             </div>
         </div>

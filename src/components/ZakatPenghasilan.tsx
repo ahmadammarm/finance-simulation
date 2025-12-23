@@ -1,11 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Wallet, Info, CheckCircle2, AlertCircle, CalendarDays, Calendar } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import BackToHome from "./layout/BackToHome"
+import { BreadcrumbHeader } from "./layout/BreadcrumbHeader"
 
-export default function ZakatPenghasilan() {
+export default function ZakatPenghasilan({ title }: { title: string }) {
     const [penghasilan, setPenghasilan] = useState<string>("")
     const [periode, setPeriode] = useState<"bulanan" | "tahunan">("bulanan")
     const [zakatAmount, setZakatAmount] = useState<number | null>(null)
@@ -47,9 +49,16 @@ export default function ZakatPenghasilan() {
 
     const isAboveNisab = penghasilan ? Number.parseFloat(penghasilan) >= getNisab() : false
 
+    useEffect(() => {
+        document.title = `Finance Simulation App - ${title}`
+    }, [title])
+
     return (
         <div className="min-h-screen bg-blue-500/5">
             <div className="container mx-auto px-4 py-12 max-w-4xl">
+                <div className="mb-6">
+                    <BreadcrumbHeader pathName="Zakat Penghasilan" textColor="text-blue-500" />
+                </div>
                 <div className="text-center mb-12 space-y-4">
                     <h1 className="text-4xl md:text-5xl font-bold text-blue-500 text-balance">
                         Kalkulator Zakat Penghasilan
@@ -104,8 +113,8 @@ export default function ZakatPenghasilan() {
                                             setShowResult(false)
                                         }}
                                         className={`p-4 rounded-xl border-2 transition-all font-semibold flex items-center justify-center gap-2 ${periode === "bulanan"
-                                                ? "bg-blue-500 border-blue-500 text-white shadow-lg scale-105"
-                                                : "border-border hover:border-blue-500/50 text-muted-foreground hover:text-foreground"
+                                            ? "bg-blue-500 border-blue-500 text-white shadow-lg scale-105"
+                                            : "border-border hover:border-blue-500/50 text-muted-foreground hover:text-foreground"
                                             }`}
                                     >
                                         <Calendar className="w-5 h-5" />
@@ -118,8 +127,8 @@ export default function ZakatPenghasilan() {
                                             setShowResult(false)
                                         }}
                                         className={`p-4 rounded-xl border-2 transition-all font-semibold flex items-center justify-center gap-2 ${periode === "tahunan"
-                                                ? "bg-blue-500 border-blue-500 text-white shadow-lg scale-105"
-                                                : "border-border hover:border-blue-500/50 text-muted-foreground hover:text-foreground"
+                                            ? "bg-blue-500 border-blue-500 text-white shadow-lg scale-105"
+                                            : "border-border hover:border-blue-500/50 text-muted-foreground hover:text-foreground"
                                             }`}
                                     >
                                         <CalendarDays className="w-5 h-5" />
@@ -159,8 +168,8 @@ export default function ZakatPenghasilan() {
                             {penghasilan && (
                                 <div
                                     className={`p-4 rounded-xl border-2 shadow-md ${isAboveNisab
-                                            ? "bg-blue-500/10 border-blue-500/40"
-                                            : "bg-muted border-muted-foreground/40"
+                                        ? "bg-blue-500/10 border-blue-500/40"
+                                        : "bg-muted border-muted-foreground/40"
                                         }`}
                                 >
                                     <div className="flex items-center gap-2">
@@ -294,6 +303,9 @@ export default function ZakatPenghasilan() {
                         Perhitungan ini adalah estimasi. Untuk perhitungan yang lebih akurat, konsultasikan dengan ustadz atau
                         lembaga zakat terpercaya.
                     </p>
+                </div>
+                <div className="flex items-center justify-center">
+                    <BackToHome bgColor="bg-blue-400 hover:bg-blue-500" />
                 </div>
             </div>
         </div>
