@@ -1,7 +1,13 @@
+import { useEffect } from "react"
 import FinanceTypeCard from "./components/homepage/FinanceTypeCard"
 import { Wallet, Banknote } from "lucide-react"
 
 export default function App() {
+
+    useEffect(() => {
+        document.title = "Finance Simulation Platform"
+    }, [])
+
     return (
         <div className="min-h-screen bg-linear-to-br from-primary/10 via-card to-accent/10">
             <div className="text-center pt-12 mb-8 px-4">
@@ -40,6 +46,15 @@ export default function App() {
                         buttonColor="text-purple-700"
                         link="/kpr-syariah"
                         gradient="bg-linear-to-br from-purple-400 to-pink-500"
+                    />
+
+                    <FinanceTypeCard
+                        title="Dana Darurat"
+                        description="Hitung kebutuhan dana darurat Anda berdasarkan pengeluaran bulanan dan tanggungan."
+                        icon={Wallet}
+                        buttonColor="text-red-700"
+                        link="/dana-darurat"
+                        gradient="bg-linear-to-br from-red-400 to-red-500"
                     />
                 </div>
             </div>

@@ -40,8 +40,8 @@ export default function ZakatMaal({ title }: { title: string }) {
     }, [title])
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-primary/5 via-primary/10 to-primary/20">
-            <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <div className="min-h-screen bg-linear-to-br from-primary/5 via-primary/10 to-primary/20 py-12 px-4">
+            <div className="max-w-6xl mx-auto">
                 <div className="mb-6">
                     <BreadcrumbHeader pathName="Zakat Maal" textColor="text-primary" />
                 </div>

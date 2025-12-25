@@ -54,8 +54,8 @@ export default function ZakatPenghasilan({ title }: { title: string }) {
     }, [title])
 
     return (
-        <div className="min-h-screen bg-blue-500/5">
-            <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <div className="min-h-screen bg-blue-500/5 py-12 px-4">
+            <div className="max-w-6xl mx-auto">
                 <div className="mb-6">
                     <BreadcrumbHeader pathName="Zakat Penghasilan" textColor="text-blue-500" />
                 </div>

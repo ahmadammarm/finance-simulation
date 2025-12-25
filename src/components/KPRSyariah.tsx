@@ -38,8 +38,8 @@ export default function KPRSyariah({ title }: { title: string }) {
     }
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-purple-700/5 via-purple-700/10 to-purple-700/20">
-            <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <div className="min-h-screen bg-linear-to-br from-purple-700/5 via-purple-700/10 to-purple-700/20 py-12 px-4">
+            <div className="max-w-6xl mx-auto">
                 <div className="mb-6">
                     <BreadcrumbHeader pathName="Simulasi KPR Syariah" textColor="text-purple-700" />
                 </div>
