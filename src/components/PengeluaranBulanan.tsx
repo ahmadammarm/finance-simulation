@@ -58,7 +58,7 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
     }, [title])
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-yellow-50/30 via-yellow-50/50 to-orange-50/40 py-12 px-4">
+        <div className="min-h-screen bg-yellow-500/5 py-12 px-4">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-6">
                     <BreadcrumbHeader pathName="Pengeluaran Bulanan" textColor="text-yellow-600" />
@@ -68,20 +68,20 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                     <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
                         Kalkulator Pengeluaran Bulanan
                     </h1>
-                    <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
                         Simulasikan estimasi pengeluaran bulanan Anda berdasarkan gaji dan jumlah
                         tanggungan untuk membantu perencanaan keuangan yang lebih sehat.
                     </p>
                 </div>
 
-                <Card className="mb-8 border-2 border-yellow-200/60 bg-linear-to-br from-white to-yellow-50/30 shadow-lg">
+                <Card className="mb-8 border-2 border-yellow-200/60 bg-yellow-500/30 shadow-lg">
                     <CardContent className="flex items-start gap-3">
                         <div className="bg-yellow-400 p-2 rounded-lg mt-1 shadow-md">
                             <Info className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                            <h3 className="font-semibold mb-2 text-yellow-900">Informasi Pengeluaran Ideal</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
+                            <h3 className="font-semibold mb-2 dark:text-white">Informasi Pengeluaran Ideal</h3>
+                            <p className="text-sm text-yellow-800 dark:text-yellow-300">
                                 Pengeluaran bulanan yang sehat idealnya tidak melebihi 60% dari gaji.
                                 Jumlah tanggungan sangat memengaruhi besarnya kebutuhan dasar.
                             </p>
@@ -89,10 +89,10 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                     </CardContent>
                 </Card>
 
-                <Card className="mb-8 border-2 border-yellow-200/60 shadow-2xl bg-linear-to-br from-white to-yellow-50/30">
+                <Card className="mb-8 border-2 border-yellow-200/60 shadow-2xl bg-yellow-500/10">
                     <CardContent className="p-8 space-y-6">
                         <div>
-                            <label className="block text-sm font-semibold mb-3 text-yellow-900">
+                            <label className="block text-sm font-semibold mb-3">
                                 Gaji Bulanan (Rupiah)
                             </label>
                             <input
@@ -113,7 +113,7 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold mb-3 text-yellow-900">
+                            <label className="block text-sm font-semibold mb-3">
                                 Jumlah Tanggungan
                             </label>
                             <input
@@ -133,23 +133,23 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                             <div
                                 className={`p-4 rounded-xl border-2 shadow-md ${
                                     status === "healthy"
-                                        ? "bg-green-50 border-green-400"
+                                        ? "bg-green-50 border-green-400 dark:bg-green-900/25 dark:border-green-700"
                                         : status === "warning"
-                                        ? "bg-yellow-100 border-yellow-400"
-                                        : "bg-red-100 border-red-400"
+                                        ? "bg-yellow-100 border-yellow-400 dark:bg-yellow-900/20 dark:border-yellow-600"
+                                        : "bg-red-100 border-red-400 dark:bg-red-900/20 dark:border-red-600"
                                 }`}
                             >
                                 <div className="flex items-center gap-2">
                                     {status === "healthy" && (
-                                        <CheckCircle2 className="text-green-600" />
+                                        <CheckCircle2 className="text-green-600 dark:text-green-300" />
                                     )}
                                     {status === "warning" && (
-                                        <AlertCircle className="text-yellow-600" />
+                                        <AlertCircle className="text-yellow-600 dark:text-yellow-300" />
                                     )}
                                     {status === "danger" && (
-                                        <XCircle className="text-red-600" />
+                                        <XCircle className="text-red-600 dark:text-red-300" />
                                     )}
-                                    <span className="font-semibold text-sm">
+                                    <span className="font-semibold text-sm text-gray-800 dark:text-gray-100">
                                         {status === "healthy"
                                             ? "Pengeluaran masih dalam batas sehat"
                                             : status === "warning"
@@ -171,71 +171,71 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                 </Card>
 
                 {showResult && (
-                    <Card className="border-2 border-yellow-300/60 shadow-2xl bg-linear-to-br from-white to-yellow-50/40 animate-in fade-in slide-in-from-bottom-4">
+                    <Card className="border-2 border-yellow-300/60 shadow-2xl bg-linear-to-br from-white to-yellow-50/40 animate-in fade-in slide-in-from-bottom-4 dark:from-neutral-900 dark:to-yellow-900/10 dark:border-yellow-800/40">
                         <CardContent className="p-8 space-y-6">
                             <div className="text-center">
-                                <p className="text-sm text-muted-foreground mb-2">
+                                <p className="text-sm text-muted-foreground mb-2 dark:text-gray-300">
                                     Total Estimasi Pengeluaran Bulanan
                                 </p>
-                                <p className="text-4xl md:text-6xl font-bold text-yellow-500">
+                                <p className="text-4xl md:text-6xl font-bold text-yellow-500 dark:text-yellow-400">
                                     {FormatRupiah(totalExpense)}
                                 </p>
                             </div>
 
                             <div className="space-y-4 mt-8">
-                                <h3 className="text-lg font-bold text-yellow-900 mb-4">Rincian Pengeluaran</h3>
+                                <h3 className="text-lg font-bold mb-4 dark:text-white">Rincian Pengeluaran</h3>
                                 
-                                <div className="bg-white p-5 rounded-xl border-2 border-yellow-200/50 shadow-md">
+                                <div className="bg-white p-5 rounded-xl border-2 border-yellow-200/50 shadow-md dark:bg-gray-800 dark:border-yellow-800/30">
                                     <div className="flex items-start gap-3 mb-3">
                                         <div className="bg-yellow-400 p-2 rounded-lg">
                                             <Home className="w-5 h-5 text-white" />
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex justify-between items-center mb-1">
-                                                <h4 className="font-bold text-yellow-900">Pengeluaran Wajib</h4>
-                                                <span className="font-bold text-yellow-600">
+                                                <h4 className="font-bold dark:text-white">Pengeluaran Wajib</h4>
+                                                <span className="font-bold text-yellow-600 dark:text-yellow-300">
                                                     {FormatRupiah(mandatoryExpense)}
                                                 </span>
                                             </div>
-                                            <p className="text-xs text-gray-600">
+                                            <p className="text-xs dark:text-gray-300">
                                                 Kebutuhan pokok: sewa/cicilan rumah, listrik, air, gas, transportasi rutin
                                             </p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="bg-white p-5 rounded-xl border-2 border-yellow-200/50 shadow-md">
+                                <div className="bg-white p-5 rounded-xl border-2 border-yellow-200/50 shadow-md dark:bg-gray-800 dark:border-yellow-800/30">
                                     <div className="flex items-start gap-3 mb-3">
                                         <div className="bg-yellow-500 p-2 rounded-lg">
                                             <ShoppingCart className="w-5 h-5 text-white" />
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex justify-between items-center mb-1">
-                                                <h4 className="font-bold text-yellow-900">Pengeluaran Variabel</h4>
-                                                <span className="font-bold text-yellow-600">
+                                                <h4 className="font-bold dark:text-white">Pengeluaran Variabel</h4>
+                                                <span className="font-bold text-yellow-600 dark:text-yellow-300">
                                                     {FormatRupiah(variableExpense)}
                                                 </span>
                                             </div>
-                                            <p className="text-xs text-gray-600">
+                                            <p className="text-xs dark:text-gray-300">
                                                 Kebutuhan sehari-hari: belanja bulanan, makan, komunikasi, hiburan
                                             </p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="bg-white p-5 rounded-xl border-2 border-yellow-200/50 shadow-md">
+                                <div className="bg-white p-5 rounded-xl border-2 border-yellow-200/50 shadow-md dark:bg-gray-800 dark:border-yellow-800/30">
                                     <div className="flex items-start gap-3 mb-3">
                                         <div className="bg-orange-400 p-2 rounded-lg">
                                             <Calendar className="w-5 h-5 text-white" />
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex justify-between items-center mb-1">
-                                                <h4 className="font-bold text-yellow-900">Pengeluaran Berkala</h4>
-                                                <span className="font-bold text-orange-500">
+                                                <h4 className="font-bold dark:text-white">Pengeluaran Berkala</h4>
+                                                <span className="font-bold text-orange-500 dark:text-orange-300">
                                                     {FormatRupiah(periodicExpense)}
                                                 </span>
                                             </div>
-                                            <p className="text-xs text-gray-600">
+                                            <p className="text-xs dark:text-gray-300">
                                                 Kebutuhan tidak rutin: pendidikan, kesehatan, perawatan, asuransi
                                             </p>
                                         </div>
@@ -244,32 +244,32 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                             </div>
 
                             <div className="space-y-3 mt-6">
-                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100">
-                                    <span className="font-semibold">Gaji Bulanan</span>
-                                    <span className="font-bold text-yellow-600">
+                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100 dark:bg-yellow-900/10 dark:border-yellow-800/20">
+                                    <span className="font-semibold dark:text-white">Gaji Bulanan</span>
+                                    <span className="font-bold text-yellow-600 dark:text-yellow-300">
                                         {FormatRupiah(parsedSalary)}
                                     </span>
                                 </div>
-                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100">
-                                    <span className="font-semibold">Total Orang</span>
-                                    <span className="font-bold text-yellow-600">{totalPeople} orang</span>
+                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100 dark:bg-yellow-900/10 dark:border-yellow-800/20">
+                                    <span className="font-semibold dark:text-white">Total Orang</span>
+                                    <span className="font-bold text-yellow-600 dark:text-yellow-300">{totalPeople} orang</span>
                                 </div>
-                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100">
-                                    <span className="font-semibold">Pengeluaran / Gaji</span>
-                                    <span className="font-bold text-yellow-600">
+                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100 dark:bg-yellow-900/10 dark:border-yellow-800/20">
+                                    <span className="font-semibold dark:text-white">Pengeluaran / Gaji</span>
+                                    <span className="font-bold text-yellow-600 dark:text-yellow-300">
                                         {(expenseRatio * 100).toFixed(1)}%
                                     </span>
                                 </div>
-                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100">
-                                    <span className="font-semibold">Sisa untuk Tabungan</span>
-                                    <span className={`font-bold ${parsedSalary - totalExpense >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                <div className="flex justify-between p-4 bg-yellow-50/60 rounded-lg border border-yellow-100 dark:bg-yellow-900/10 dark:border-yellow-800/20">
+                                    <span className="font-semibold dark:text-white">Sisa untuk Tabungan</span>
+                                    <span className={`font-bold ${parsedSalary - totalExpense >= 0 ? 'text-green-600 dark:text-green-300' : 'text-red-600 dark:text-red-300'}`}>
                                         {FormatRupiah(parsedSalary - totalExpense)}
                                     </span>
                                 </div>
                             </div>
 
-                            <div className="bg-yellow-50/50 p-5 rounded-xl border-2 border-yellow-200/60">
-                                <p className="text-sm text-center font-medium text-yellow-900">
+                            <div className="bg-yellow-50/50 p-5 rounded-xl border-2 border-yellow-200/60 dark:bg-yellow-900/20 dark:border-yellow-800/30">
+                                <p className="text-sm text-center font-medium dark:text-yellow-200">
                                     {status === "healthy" &&
                                         "✓ Keuangan Anda berada dalam kondisi sehat. Pertahankan pola ini dan tingkatkan tabungan."}
                                     {status === "warning" &&
@@ -282,7 +282,7 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                     </Card>
                 )}
 
-                <div className="mt-8 text-center text-sm text-gray-600">
+                <div className="mt-8 text-center text-sm">
                     Perhitungan ini bersifat estimasi dan dapat berbeda tergantung kondisi keluarga
                     dan wilayah tempat tinggal.
                 </div>
