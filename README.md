@@ -38,6 +38,14 @@ Calculator to determine the ideal emergency fund needed.
 - Time simulation: How many months to reach target with specific monthly savings
 - Educational content: Explanation of emergency fund importance and tips for building it
 
+### 5. Monthly Expense Simulation
+Simulation tool to help users plan their monthly expenses based on their salary and number of dependents.
+- Input: Monthly salary, number of dependents
+- Calculation: Suggested allocation of expenses into categories (housing, food, transportation, savings, etc.) based on Indonesian financial guidelines
+- Output: Breakdown of recommended monthly expenses by category
+- Status Indicator: Visual feedback on whether the user's salary is sufficient to cover recommended expenses (Healthy, Warning, Critical)
+- Educational content: Tips on managing monthly expenses effectively
+
 
 
 ## Tech Stack

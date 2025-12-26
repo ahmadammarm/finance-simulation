@@ -56,6 +56,15 @@ export default function App() {
                         link="/dana-darurat"
                         gradient="bg-linear-to-br from-red-400 to-red-500"
                     />
+
+                    <FinanceTypeCard
+                        title="Pengeluaran Bulanan"
+                        description="Simulasikan pengeluaran bulanan Anda berdasarkan gaji dan jumlah tanggungan."
+                        icon={Wallet}
+                        buttonColor="text-yellow-700"
+                        link="/pengeluaran-bulanan"
+                        gradient="bg-linear-to-br from-yellow-400 to-yellow-500"
+                    />
                 </div>
             </div>
         </div>
