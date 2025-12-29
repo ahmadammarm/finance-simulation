@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import FinanceTypeCard from "./FinanceTypeCard"
 import { Wallet, Banknote, Home as HomeIcon, Shield, TrendingUp, Github } from "lucide-react"
-import { ModeToggle } from "../layout/ModeToggle"
 import { Button } from "../ui/button"
 
 export default function Homepage({ title = "Finance Simulation Platform" }) {
@@ -16,7 +15,7 @@ export default function Homepage({ title = "Finance Simulation Platform" }) {
                     <Button variant="ghost" size="icon" className="hover:bg-accent/10 mr-2" onClick={() => window.open("https://github.com/ahmadammarm/finance-simulation")}>
                         <Github className="h-[1.2rem] w-[1.2rem]" />
                     </Button>
-                    <ModeToggle />
+                    {/* <ModeToggle /> */}
                 </div>
             </div>
 

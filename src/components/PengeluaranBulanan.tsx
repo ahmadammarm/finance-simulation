@@ -29,13 +29,13 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
     const parsedDependents = Number.parseInt(dependents) || 0
 
     const totalPeople = parsedDependents + 1
-    
+
     const mandatoryExpense = totalPeople * BASIC_COST_PER_PERSON * 0.4
-    
+
     const variableExpense = totalPeople * BASIC_COST_PER_PERSON * 0.35
-    
+
     const periodicExpense = totalPeople * BASIC_COST_PER_PERSON * 0.25
-    
+
     const totalExpense = mandatoryExpense + variableExpense + periodicExpense
     const expenseRatio = parsedSalary > 0 ? totalExpense / parsedSalary : 0
 
@@ -74,7 +74,7 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                     </p>
                 </div>
 
-                <Card className="mb-8 border-2 border-yellow-200/60 bg-yellow-500/30 shadow-lg">
+                <Card className="mb-8 border-2 border-yellow-200/60 bg-yellow-50 shadow-lg">
                     <CardContent className="flex items-start gap-3">
                         <div className="bg-yellow-400 p-2 rounded-lg mt-1 shadow-md">
                             <Info className="w-5 h-5 text-white" />
@@ -89,7 +89,7 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
                     </CardContent>
                 </Card>
 
-                <Card className="mb-8 border-2 border-yellow-200/60 shadow-2xl bg-yellow-500/10">
+                <Card className="mb-8 border-2 border-yellow-200/60 shadow-2xl bg-background">
                     <CardContent className="p-8 space-y-6">
                         <div>
                             <label className="block text-sm font-semibold mb-3">
@@ -184,7 +184,7 @@ export default function PengeluaranBulanan({ title }: { title: string }) {
 
                             <div className="space-y-4 mt-8">
                                 <h3 className="text-lg font-bold mb-4 dark:text-white">Rincian Pengeluaran</h3>
-                                
+
                                 <div className="bg-white p-5 rounded-xl border-2 border-yellow-200/50 shadow-md dark:bg-gray-800 dark:border-yellow-800/30">
                                     <div className="flex items-start gap-3 mb-3">
                                         <div className="bg-yellow-400 p-2 rounded-lg">
